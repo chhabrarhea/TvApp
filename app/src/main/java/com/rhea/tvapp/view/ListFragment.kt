@@ -1,4 +1,4 @@
-package com.rhea.tvapp
+package com.rhea.tvapp.view
 
 import android.os.Bundle
 import android.view.View
