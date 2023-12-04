@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">TvApp</string>
     <string name="banner">banner</string>
+    <string name="search">Search</string>
+    <string name="sports">Sports</string>
+    <string name="language">Language</string>
+    <string name="settings">Settings</string>
+    <string name="genre">Genre</string>
+    <string name="home">Home</string>
+    <string name="tv">TV</string>
+    <string name="movies">Movies</string>
 </resources>
