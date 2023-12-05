@@ -12,7 +12,7 @@ class MainViewModel: ViewModel() {
 
     val selectedMovie = MutableLiveData<Movie>()
     val isSideMenuOpened = MutableStateFlow(false)
-
+    val clickedMovie = MutableLiveData<Movie>()
     fun getListData(assets: AssetManager) :Movies {
         return Util.getJsonFromFile(assets,"movie_data.json")
     }

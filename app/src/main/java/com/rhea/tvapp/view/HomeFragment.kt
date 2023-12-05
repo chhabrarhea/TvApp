@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.distinctUntilChanged
 import com.bumptech.glide.Glide
 import com.rhea.tvapp.R
 import com.rhea.tvapp.data.Movie
@@ -32,7 +33,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun observeData() {
-        viewModel.selectedMovie.observe(this) {
+        viewModel.selectedMovie.distinctUntilChanged().observe(this) {
             bindSelectedMovieData(it)
         }
     }
@@ -45,7 +46,7 @@ class HomeFragment : Fragment() {
             val url = "https://www.themoviedb.org/t/p/w500" + movie.poster_path
             Glide.with(root.context)
                 .load(url)
-                .into(mainBannerImageview)
+                .into(bannerLayout.bannerImageview)
         }
     }
 

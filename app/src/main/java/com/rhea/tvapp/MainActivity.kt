@@ -7,6 +7,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.activity.viewModels
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.distinctUntilChanged
 import androidx.lifecycle.lifecycleScope
 import com.rhea.tvapp.databinding.ActivityMainBinding
 import com.rhea.tvapp.util.Util
@@ -52,6 +53,9 @@ class MainActivity: FragmentActivity(), View.OnKeyListener {
             viewModel.isSideMenuOpened.collectLatest {
                 toggleSideMenu(it)
             }
+        }
+        viewModel.clickedMovie.distinctUntilChanged().observe(this) {
+            startActivity(DetailActivity.create(this, it))
         }
     }
 

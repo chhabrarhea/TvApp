@@ -8,6 +8,7 @@ import androidx.leanback.widget.ArrayObjectAdapter
 import androidx.leanback.widget.HeaderItem
 import androidx.leanback.widget.ListRow
 import androidx.leanback.widget.ListRowPresenter
+import androidx.leanback.widget.OnItemViewClickedListener
 import androidx.leanback.widget.OnItemViewSelectedListener
 import com.rhea.tvapp.data.Movie
 import com.rhea.tvapp.util.ItemPresenter
@@ -32,6 +33,9 @@ class ListFragment: RowsSupportFragment() {
             if (data is Movie) {
                 viewModel.selectedMovie.postValue(data)
             }
+        }
+        onItemViewClickedListener = OnItemViewClickedListener { _, data, _, _ ->
+
         }
     }
 

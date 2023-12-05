@@ -1,5 +1,9 @@
 package com.rhea.tvapp.data
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Movie(
     val adult: Boolean,
     val backdrop_path: String,
@@ -19,4 +23,4 @@ data class Movie(
     val video: Boolean,
     val vote_average: Double,
     val vote_count: Int
-)
+): Parcelable
