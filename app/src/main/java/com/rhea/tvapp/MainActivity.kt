@@ -31,6 +31,7 @@ class MainActivity: FragmentActivity(), View.OnKeyListener {
         addHomeFragment()
         setLiveDataObserver()
         setKeyListeners()
+        switchLastSelected(binding.btnHome)
     }
 
     private fun setKeyListeners() {
@@ -59,10 +60,18 @@ class MainActivity: FragmentActivity(), View.OnKeyListener {
             val width = if (open) 16 else 5
             blfNavBar.requestLayout()
             blfNavBar.layoutParams.width = Util.getWidthInPercent(this@MainActivity, width)
+            lastSelectedMenu?.isActivated = !open
             if (!open)
                 container.requestFocus()
             else lastSelectedMenu?.requestFocus()
         }
+    }
+
+    private fun switchLastSelected(newSelected: View) {
+        lastSelectedMenu?.isActivated = false
+        lastSelectedMenu = newSelected
+        newSelected.requestFocus()
+        newSelected.isActivated = true
     }
 
     private fun addHomeFragment() {
@@ -76,7 +85,7 @@ class MainActivity: FragmentActivity(), View.OnKeyListener {
             KeyEvent.KEYCODE_DPAD_LEFT -> viewModel.isSideMenuOpened.value = true
             KeyEvent.KEYCODE_DPAD_CENTER -> {
                 if (view == null ) return false
-                lastSelectedMenu = view
+                switchLastSelected(view)
             }
         }
         return false
