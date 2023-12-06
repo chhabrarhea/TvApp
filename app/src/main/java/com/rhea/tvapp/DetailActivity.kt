@@ -11,6 +11,7 @@ import com.rhea.tvapp.data.api.ApiHelper.IMAGE_BASE_URL
 import com.rhea.tvapp.data.model.DetailResponse
 import com.rhea.tvapp.data.model.Movie
 import com.rhea.tvapp.databinding.ActivityDetailBinding
+import com.rhea.tvapp.view.CastFragment
 import com.rhea.tvapp.view.MainViewModel
 
 class DetailActivity: FragmentActivity() {
@@ -26,6 +27,14 @@ class DetailActivity: FragmentActivity() {
         setContentView(binding.root)
         setObservers()
         initData()
+        addCastFragment()
+    }
+
+    private fun addCastFragment() {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.cast_fragment, CastFragment())
+            commit()
+        }
     }
 
     private fun initData() {
@@ -45,7 +54,7 @@ class DetailActivity: FragmentActivity() {
     private fun initDetailViews(detail: DetailResponse) {
         binding.apply {
             title.text = detail.title
-            subtitle.text = detail.overview
+            description.text = detail.overview
             Glide.with(this@DetailActivity)
                 .load(IMAGE_BASE_URL + detail.poster_path)
                 .into(bannerImageview)

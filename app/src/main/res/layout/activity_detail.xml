@@ -57,30 +57,16 @@
         app:layout_constraintWidth_percent=".42"
         tools:text="Avatar : The way of water" />
 
-    <TextView
-        android:id="@+id/subtitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/color_white"
-        android:textSize="13sp"
-        app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent=".42"
-        tools:text="Avatar : The way of water" />
-
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:ellipsize="end"
-        android:lineSpacingMultiplier="1.2"
         android:textColor="@color/color_white"
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/subtitle"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintWidth_percent=".42"
         tools:text="Avatar : The way of water" />
@@ -147,20 +133,13 @@
         app:layout_constraintWidth_default="percent"
         app:layout_constraintWidth_percent=".3" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_center"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".5"/>
-
     <FrameLayout
         android:id="@+id/cast_fragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline_center"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/add_to_mylist" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
