@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.leanback.widget.Presenter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.rhea.tvapp.data.api.ApiHelper
 import com.rhea.tvapp.data.model.CastResponse
 import com.rhea.tvapp.databinding.CastItemViewBinding
 
@@ -15,8 +16,9 @@ class CastItemPresenter: Presenter() {
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder?, item: Any?) {
-       if (viewHolder is CastItemViewHolder && item is CastResponse.Cast)
+       if (viewHolder is CastItemViewHolder && item is CastResponse.Cast) {
            viewHolder.bind(item)
+       }
     }
 
     override fun onUnbindViewHolder(viewHolder: ViewHolder?) {}
@@ -28,7 +30,7 @@ class CastItemPresenter: Presenter() {
         )
 
         fun bind(cast: CastResponse.Cast) {
-            val path = "https://www.themoviedb.org/t/p/w780" + cast.profile_path
+            val path = ApiHelper.IMAGE_BASE_URL + cast.profile_path
             Glide.with(bi.root.context)
                 .load(path)
                 .apply(RequestOptions.circleCropTransform())
