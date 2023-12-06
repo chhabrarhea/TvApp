@@ -32,7 +32,14 @@ class MainActivity: FragmentActivity(), View.OnKeyListener {
         addHomeFragment()
         setLiveDataObserver()
         setKeyListeners()
-        switchLastSelected(binding.btnHome)
+        initNavBar()
+    }
+
+    private fun initNavBar() {
+        binding.btnHome.apply {
+            isActivated = true
+            lastSelectedMenu = this
+        }
     }
 
     private fun setKeyListeners() {

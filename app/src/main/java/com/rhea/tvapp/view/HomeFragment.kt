@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
             val url = "https://www.themoviedb.org/t/p/w500" + movie.poster_path
             Glide.with(root.context)
                 .load(url)
-                .into(bannerLayout.bannerImageview)
+                .into(bannerImageview)
         }
     }
 
