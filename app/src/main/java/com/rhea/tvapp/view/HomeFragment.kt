@@ -9,7 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.distinctUntilChanged
 import com.bumptech.glide.Glide
 import com.rhea.tvapp.R
-import com.rhea.tvapp.data.Movie
+import com.rhea.tvapp.data.model.Movie
 import com.rhea.tvapp.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

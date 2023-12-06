@@ -18,7 +18,7 @@ object Util {
         return (width * percent) / 100
     }
 
-    inline fun <reified T> getJsonFromFile(assets: AssetManager, fileName: String): T{
+    inline fun <reified T> getJsonFromFile(assets: AssetManager, fileName: String): T {
         val `is`: InputStream = assets.open(fileName)
         return Gson().fromJson(BufferedReader(InputStreamReader(`is`)), T::class.java)
     }

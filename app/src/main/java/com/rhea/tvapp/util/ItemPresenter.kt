@@ -4,7 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.leanback.widget.Presenter
 import com.bumptech.glide.Glide
-import com.rhea.tvapp.data.Movie
+import com.rhea.tvapp.data.api.ApiHelper
+import com.rhea.tvapp.data.model.Movie
 import com.rhea.tvapp.databinding.ItemViewBinding
 
 class ItemPresenter : Presenter() {
@@ -36,7 +37,7 @@ class ItemPresenter : Presenter() {
         }
 
         fun bind(movie: Movie) {
-            val url = "https://www.themoviedb.org/t/p/w500" + movie.poster_path
+            val url = ApiHelper.IMAGE_BASE_URL + movie.poster_path
             Glide.with(binding.root.context)
                 .load(url)
                 .into(binding.posterImage)

@@ -1,4 +1,4 @@
-package com.rhea.tvapp.data
+package com.rhea.tvapp.data.model
 
 data class MovieCategory(
     val movies: List<Movie>,
