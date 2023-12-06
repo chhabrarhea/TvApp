@@ -30,7 +30,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent=".6"
+        app:layout_constraintWidth_percent=".5"
         android:contentDescription="@string/banner" />
 
     <View
@@ -38,7 +38,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent=".7"
+        app:layout_constraintWidth_percent=".8"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,7 +77,6 @@
         android:layout_marginTop="12dp"
         android:ellipsize="end"
         android:lineSpacingMultiplier="1.2"
-        android:maxLines="3"
         android:textColor="@color/color_white"
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
@@ -85,21 +84,6 @@
         app:layout_constraintWidth_default="percent"
         app:layout_constraintWidth_percent=".42"
         tools:text="Avatar : The way of water" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/show_more"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/btn_selector"
-        android:clickable="true"
-        android:focusable="true"
-        android:nextFocusDown="@id/play"
-        android:padding="1dp"
-        android:text="@string/show_more"
-        android:textColor="@color/color_white"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/description"
-        app:layout_constraintStart_toEndOf="@+id/description" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/play"
@@ -162,5 +146,21 @@
         app:layout_constraintTop_toBottomOf="@+id/more_like_this"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintWidth_percent=".3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".5"/>
+
+    <FrameLayout
+        android:id="@+id/cast_fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_center"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
